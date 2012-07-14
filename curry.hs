@@ -1,6 +1,9 @@
 addThree :: Int -> Int
 addThree = (+3)
 
+addThree' :: Int -> Int
+addThree' x = x + 3
+
 applyTwice :: (a -> a) -> a -> a
 applyTwice f x = f (f x)
 

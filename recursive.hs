@@ -35,3 +35,21 @@ quicksort (x:xs) =
     let smalls = filter (<= x) xs
         larges = filter (> x) xs
     in quicksort smalls ++ [x] ++ quicksort larges
+
+find :: (Eq a) => (a -> Bool) -> [a] -> [a]
+find _ [] = []
+find f (x:xs)
+    | f x = x : next
+    | otherwise = next
+    where next = find f xs
+
+-- find :: (Eq a) => (a -> Bool) -> [a] -> [a]
+-- find _ [] = []
+-- find f (x:xs)
+--     | f x = x : find f xs
+--     | otherwise = find f xs
+
+find' :: (Eq a) => (a -> Bool) -> [a] -> [a]
+find' _ [] = []
+find' f (x:xs) = let next = find' f xs in if f x then x : next else next
+
