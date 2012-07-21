@@ -1,5 +1,11 @@
 -- 自動導出しないで、自分で実装する場合
 
+class Eq a where
+    (==) :: a -> a -> Bool
+    (/=) :: a -> a -> Bool
+    x == y = not (x /= y)
+    x /= y = not (x == y)
+
 data TrafficLight = Red | Yellow | Green -- deriving (Eq, Show)
 
 instance Eq TrafficLight where

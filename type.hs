@@ -1,3 +1,3 @@
-data Person { name :: String,
-              age :: Int,
-            } derived
+data Person = Person { name :: String
+                     , age :: Int
+                     }
