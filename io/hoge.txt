@@ -1,0 +1,6 @@
+hogehoge
+foo
+bar
+buzz
+
+Yes, I am.
